@@ -1,6 +1,7 @@
 //
 // Created by ryan on 06/06/23.
 //
+#include <iostream>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>

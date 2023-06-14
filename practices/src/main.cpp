@@ -1,7 +1,7 @@
 // compile and run
-// g++ -c src/main.cpp src/Game.cpp -I /home/ryan/Documents/SFML -I ./lib/ && mv Game.o main.o ./obj
-// g++ obj/main.o obj/Game.o -o sfml-app -L /home/ryan/Documents/SFML-2.5.1/lib -lsfml-graphics -lsfml-window -lsfml-system
-// ./sfml-app
+// g++ -c src/main.cpp src/Game.cpp -I ./lib/ && mv Game.o main.o ./obj
+// g++ obj/main.o obj/Game.o -o app -L ./lib/SFML-2.5.1/lib -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network
+// ./app
 
 #include "Game.h"
 
