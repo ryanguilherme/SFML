@@ -51,6 +51,7 @@ private:
 
     //Game objects
     std::vector<sf::RectangleShape> enemies;
+    std::vector<sf::Color> enemiesColors;
     sf::RectangleShape enemy;
 
     //Private functions

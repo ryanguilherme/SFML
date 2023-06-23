@@ -130,6 +130,7 @@ void Game::spawnEnemy()
 
     //Spawn the enemy
     this->enemies.push_back(this->enemy);
+    this->enemiesColors.push_back(this->enemy.getFillColor());
 
 }
 
@@ -176,21 +177,22 @@ void Game::updateEnemies()
 
         this->enemies[i].move(0.f, 1.f);
 
-//        //Set enemy color to red when mouse hover
-//        if (this->enemies[i].getGlobalBounds().contains(this->mousePosView))
-//        {
-//            this->enemies[i].setFillColor(sf::Color::Red);
-//        }
-//        //Returning enemy color to green when mouse is not hover
-//        else
-//        {
-//            this->enemies[i].setFillColor(sf::Color::Green);
-//        }
+        //Set enemy color to red when mouse hover
+        if (this->enemies[i].getGlobalBounds().contains(this->mousePosView))
+        {
+            this->enemies[i].setFillColor(sf::Color::Red);
+        }
+        //Returning enemy color to green when mouse is not hover
+        else
+        {
+            this->enemies[i].setFillColor(this->enemiesColors[i]);
+        }
 
         //If the enemy is past the bottom of the screen, delete them
         if (this->enemies[i].getPosition().y > this->window->getSize().y)
-        {sf::Cursor cursor;
+        {
             this->enemies.erase(this->enemies.begin() + i);
+            this->enemiesColors.erase(this->enemiesColors.begin() + i);
             this->health -= 1;
             std::cout << "Health: " << this->health << std::endl;
         }
@@ -224,6 +226,7 @@ void Game::updateEnemies()
                     //Delete the enemy
                     deleted = true;
                     this->enemies.erase(this->enemies.begin() + i);
+                    this->enemiesColors.erase(this->enemiesColors.begin() + i);
                 }
 
             }
