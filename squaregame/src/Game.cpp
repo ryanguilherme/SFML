@@ -61,6 +61,7 @@ void Game::initText()
     this->uiText.setPosition(0.f, 0.f);
 }
 
+
 void Game::initEnemies()
 {
     this->enemy.setPosition(10.f, 10.f);
@@ -77,7 +78,6 @@ const bool Game::running() const {
     return this->window->isOpen();
 }
 
-
 //Functions
 
 /*
@@ -91,7 +91,6 @@ const bool Game::running() const {
      */
 void Game::spawnEnemy()
 {
-
     this->enemy.setPosition(
         static_cast<float>(rand() % static_cast<int>(this->window->getSize().x, this->window->getSize().x)),
         0.f
@@ -153,7 +152,7 @@ void Game::renderEnemies(sf::RenderTarget& target)
      * Updates the enemy spawn timer and spawn enemies when the total
      * amount of enemies is less than the maximum.
      * Moves the enemies downwards.
-     * Removes the enemies at the edge of the screen. TODO
+     * Removes the enemies at the edge of the screen.
 */
 void Game::updateEnemies()
 {
@@ -326,3 +325,4 @@ const bool Game::getEndGame() const
 {
     return this->endGame;
 }
+
